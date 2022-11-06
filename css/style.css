@@ -1,0 +1,52 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 7vh;
+    
+    background-color: rgb(68, 121, 182);
+}
+
+.logo {
+    letter-spacing: 2px;
+    font-size: 20px;
+    color: whitesmoke;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+ul > li {
+    list-style: none;
+}
+
+ul > li > a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.burger-menu {
+    display: none;
+}
+
+.top-line, .mid-line, .bottom-line {
+    text-align: center;
+    width: 30px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    margin: 5px;
+}
+
+@media screen and (max-width) {
+    
+} 
