@@ -7,10 +7,16 @@
             <a href="#">HOME</a>
         </li>
         <li>
-            <a href="#">MUSIC</a>
+            <a href="#">LIST ALL</a>
         </li>
         <li>
-            <a href="#">ABOUT</a>
+            <a href="#">ADD TO DATABASE</a>
+        </li>
+        <li>
+            <a href="#">REMOVE</a>
+        </li>
+        <li>
+            <a href="#">EDIT</a>
         </li>
     </ul>
 
