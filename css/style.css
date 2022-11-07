@@ -110,3 +110,7 @@ ul > li > a {
 .toggle-burger .bottom-line {
     transform:  rotate(45deg) translate(-6px, -6px);
 }
+
+footer {
+    text-align: center;
+}

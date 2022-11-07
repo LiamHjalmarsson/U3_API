@@ -4,19 +4,19 @@
 
     <ul>
         <li>
-            <a href="#">HOME</a>
+            <a href="index.php">HOME</a>
         </li>
         <li>
-            <a href="#">LIST ALL</a>
+            <a href="add_to_database.php">ADD TO DATABASE</a>
         </li>
         <li>
-            <a href="#">ADD TO DATABASE</a>
+            <a href="list_all.php">LIST ALL</a>
         </li>
         <li>
-            <a href="#">REMOVE</a>
+            <a href="remove_from_database.php">REMOVE</a>
         </li>
         <li>
-            <a href="#">EDIT</a>
+            <a href="edit_database.php">EDIT</a>
         </li>
     </ul>
 

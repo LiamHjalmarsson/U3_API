@@ -10,48 +10,93 @@
         exit();
     } 
 
-    $file = "database.json";
-
+    $file_Name = "database.json";
+    
     $database = [];
+
+    if (file_exists($file_Name)) {
+        $request_File = file_get_contents($file_Name); 
+        $database = json_decode($request_File, true);
+    }
 
     $requestMethod = $_SERVER["REQUEST_METHOD"];
     
-    $requestFile = file_get_contents("php://input");
-    
-    $json_Data = json_decode($requestFile, true);
-
     if  ($requestMethod != "POST") {
-        sendJSON($database, 405);
-    } else {
-        if (!isset($json_Data["name"], $json_Data["age"], $json_Data["breed"])) {
-            $error = [];
-            sendJSON($error, 451);
-        } 
+        $error = ["error" => "Wrong http method need to us POST you are using $requestMethod!"];
+        sendJSON($error, 405);
+    } 
+
+    if ($_POST["band"] == "" or $_POST["album"] == 0 or $_POST["changer"] == "" or $_POST["year"] == "") {
+
+        $error = ["error" => "You did not add all keys"];
+        sendJSON($error);
+
+    }
+
+    $band = strtolower($_POST["band"]); 
+    $album = strtolower($_POST["album"]); 
+    $changer = strtolower($_POST["changer"]); 
+    $year = strtolower($_POST["year"]); 
+    
         
-        $name = $json_Data["name"]; 
-        $age = $json_Data["age"]; 
-        $breed = $json_Data["breed"]; 
+    $heighst_Id = 0; 
+        
+    foreach ($database as $data) {
 
-        if ($name == "" and $age == 0 and $breed == "") {
-            $error = ["error" => "Missing information"];
-            sendJSON($error, 405);
-        } else {
-            $heighst_Id = 0; 
-
-            foreach ($database as $dog) {
-                if ($dog["id"] > $heighst_Id) {
-                    $heighst_Id = $dog["id"];
-                }
-            }
-    
-            $next_Id = $heighst_Id + 1;
-            $new = ["id" => $next_Id, "name" => $name, "age" => $age, "breed" => $breed];
-    
-            $database[] = $new;
-            $json = json_encode($database, JSON_PRETTY_PRINT);
-            file_put_contents($file, $json);
-            sendJSON($new);
+        if ($data["id"] > $heighst_Id) {
+            $heighst_Id = $data["id"];
         }
+        
+        if ($data["album"] == $album) {
+            $error = ["error" => "This album exists $album"];
+            sendJSON($error, 405);
+        }
+
+    }
+    
+    
+    if ($_FILES["image"]["name"] == "") {
+        
+        $next_Id = $heighst_Id + 1;
+        $new = ["id" => $next_Id, "band" => $band, "album" => $album, "songs" => [], "changer" => $changer, "year" => $year];
+                            
+        $database[] = $new;
+        $json = json_encode($database, JSON_PRETTY_PRINT);
+        file_put_contents($file_Name, $json);
+        sendJSON($new);
+
+    } 
+
+    $fiel_Source = $_FILES["image"]["tmp_name"];
+    $new_file_Name = $_FILES["image"]["name"];
+    $file_Size = $_FILES["image"]["size"];
+    $file_Type = $_FILES["image"]["type"];
+        
+    $name_no_space = str_replace((" "), ("_"), ($new_file_Name));
+        
+        // use one of this to give unice name 
+    $timestamp = time();
+        
+    $destination = "uploades/$timestamp-$name_no_space";
+        
+    if ($file_Size > 250000) {
+        $error = ["error" => "The size is to big $size cant be bigger then 250000"];
+        sendJSON($error, 400);
+    }
+        
+    if ($file_Type != "image/jpeg" and $type != "image/jpg") {
+        $error = ["error" => "The file format $type is not allowed. Please us JPEG or JPG"];
+        sendJSON($error, 400);
+    }
+
+    if (move_uploaded_file($fiel_Source, $destination)) {
+        $next_Id = $heighst_Id + 1;
+        $new = ["id" => $next_Id, "band" => $band, "album" => $album, "songs" => [], "changer" => $changer, "year" => $year, "src" => $destination];
+                            
+        $database[] = $new;
+        $json = json_encode($database, JSON_PRETTY_PRINT);
+        file_put_contents($file_Name, $json);
+        sendJSON($new);
     }
 
 ?>

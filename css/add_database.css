@@ -1,0 +1,46 @@
+main {
+    margin: auto;
+    max-width: 950px;
+}
+
+h1 {
+    padding: 20px;
+    text-align: center;
+}
+
+#add_music {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+input {
+    width: 350px;
+    padding: 10px;
+}
+
+#submit_btn {
+    margin: auto;
+    width: 200px;
+    height: 100%;
+    padding: 10px;
+
+    /* grid-column: 3 / span 1 ; */
+    /* grid-row: 1 / span 2; */
+}
+
+.add_another {
+    margin-top: 10px;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+#added_info_container {
+    width: 60%;
+    height: 50%;
+}
