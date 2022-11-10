@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "band": "imagien dragons",
+        "album": "mercury",
+        "songs": [],
+        "genre": "pop",
+        "year": "2022",
+        "src": "uploades\/1667819129-imagine-dragons.jpg"
+    },
+    {
+        "id": 2,
+        "band": "Five finger death punch",
+        "album": "f8",
+        "songs": [],
+        "genre": "hard rock",
+        "year": "2020",
+        "src": "uploades\/1667819270-Five-Finger-Death-Punch.jpg"
+    },
+    {
+        "id": 3,
+        "band": "linking park",
+        "album": "one more light",
+        "songs": [],
+        "genre": "pop",
+        "year": "2017",
+        "src": "uploades\/1667819525-linkin-park.jpg"
+    },
+    {
+        "id": 5,
+        "band": "kwabs, fetty wap",
+        "album": "feat. fetty wao",
+        "songs": [],
+        "genre": "",
+        "year": "2015",
+        "src": "uploades\/1667836410-8f146b1922b24960d4e510054d8f7e29.1000x1000x1.jpg"
+    },
+    {
+        "id": 6,
+        "band": "fall out boy",
+        "album": "save rock and roll",
+        "songs": [],
+        "genre": "pop rock",
+        "year": "2013",
+        "src": "uploades\/1667914813-Is-Fall-Out-Boy-rock-and-roll-iphonforum.jpg"
+    },
+    {
+        "id": 7,
+        "band": "red hot chilli peppers",
+        "album": "californication",
+        "songs": [],
+        "genre": "",
+        "year": "",
+        "src": "uploades\/1668074099-red-hot-chili-peppers-logo-1024x776.jpeg"
+    },
+    {
+        "id": 8,
+        "band": "breaking benjamin",
+        "album": "dark before dawn",
+        "songs": [],
+        "genre": "",
+        "year": "",
+        "src": "uploades\/1668074195-ab67616d0000b273058671415ce0dc299db452d3.jpg"
+    },
+    {
+        "id": 9,
+        "band": "for king & country",
+        "album": "burn the ships",
+        "songs": [],
+        "genre": "",
+        "year": "2018",
+        "src": "uploades\/1668095653-forKingcountry.jpg"
+    }
+]

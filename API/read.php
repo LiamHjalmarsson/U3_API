@@ -10,7 +10,7 @@
         exit();
     } 
 
-    $file_Name = "database.json";
+    $file_Name = "./json/database.json";
 
     $database = [];
 
@@ -26,18 +26,17 @@
     } 
 
     if ($database == []) {
-        sendJSON($database);
+        $error = ["error" => "The array is empety pleacse add something"];
+        sendJSON($error, 405);
     }
         
     foreach ($database as $data) {
 
-        if (!isset($data["id"], $data["name"], $data["age"], $data["breed"])) {
+        if (!isset($data["id"], $data["band"], $data["album"])) {
             sendJSON($database);
         } else {
             sendJSON($database);
-        }
-        
+        } 
+
     }
 
-        
-        

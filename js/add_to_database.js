@@ -13,101 +13,63 @@ form.addEventListener("submit", async (e) => {
     });
 
     try {
+
         let response = await fetch(req);
 
         let recourse = await response.json();
 
-        console.log(response)
-        
+        clearSerach();
+
         if (recourse.error) {
-            new_to_data(recourse);
-            clearSerach();
+            missing_data(recourse);
         } else {
-            new_to_data(recourse);
-            clearSerach();
+            new_data_added(recourse);
         }
 
     } catch (error) {
-
+        missing_data(error);
     }
 
 });
-
-
-function new_to_data (recourse) {
-    let container = document.createElement("div");
-
-    if (recourse.error) {
-        container.innerHTML = `${recourse.error}`;
-    } else {
-        container.innerHTML = `
-            <h3>${recourse.band} ${recourse.year}</h3>
-            <p>${recourse.album}</p>
-        `
-    }
-
-    document.querySelector("section").append(container);
-}
 
 function clearSerach () {
     document.getElementById("add_music").reset();
 }
 
+function new_data_added (recourse) {
+    let container = document.createElement("div");
+    container.id = "add_new_data";
 
+    if (recourse.src != "") {
+        container.style.backgroundImage = `url(../api/${recourse.src})`;
+    } else {
+        container.classList.add("no_imag_added");
+    }
 
+    let album = first_letter_big(recourse);
 
+    container.innerHTML = ` <div class="box">
+        <h3> The band: ${album} was added! </h3>
+        <p> The album that was added: ${recourse.album} </p>
+    </div>`
 
+    document.querySelector("section").append(container);
+}
 
+function missing_data (recourse) {
+    let container = document.createElement("div");
+    container.id = "add_new_data";
 
+    container.classList.add("no_imag_added");
 
+    container.innerHTML = ` <p class="error_msg"> ${recourse.error} </p>`;
 
+    document.querySelector("section").append(container);
+} 
 
+function first_letter_big (recourse) {
+    let small_letters = recourse.album;
+    let album = small_letters.charAt(0).toUpperCase() + small_letters.slice(1);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function add_another_song () {
-//     let btn = document.querySelector(".add_another");
-
-//     btn.addEventListener("click", () => {
-//         new_song_input();
-//     })
-// }
-
-// function new_song_input () {
-//     let database_btn = document.getElementById("submit_btn");
-//     let input = document.createElement("input");
-    
-//     input.classList.add("song");
-//     input.name = "song";
-//     input.type = "text";
-//     input.placeholder = "Enter song";
-//     document.querySelector("form").insertBefore(input, database_btn);
-// }
-
-// function clear_inputs () {
-//     document.querySelectorAll("form > input").values = ""
-// }
-
-// add_another_song();
-
+    return album;
+} 

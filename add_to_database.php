@@ -1,11 +1,21 @@
 <?php
     ini_set("display_erorres", 1);
-
-    require_once("sections/header.php");
-    require_once("sections/navigation.php");
-
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/add_database.css">
+    <title>Add to database </title>
+</head>
+
+<body>
+    
+<?php require_once("sections/navigation.php"); ?>
 
     <main>
 
@@ -15,13 +25,10 @@
             <input type="text" name="band" placeholder="Enter band or artist" class="band">
             <input class="album" type="text" name="album" placeholder="Enter album">
             <input type="file" name="image" class="image">
-            <input class="year" type="text" name="changer" placeholder="Enter changer">
+            <input class="genre" type="text" name="genre" placeholder="Enter genre">
             <input class="year" type="number" name="year" placeholder="Enter year">
-            <!-- <input class="song" type="text" name="song" placeholder="Enter song"> -->
             <button type="submit" id="submit_btn"> Add to database </button>
         </form>
-
-        <!-- <button class="add_another"> Add another song </button> -->
 
     </main>
 
@@ -38,4 +45,6 @@
 
     <script src="js/navigation.js"></script>
     <script src="js/add_to_database.js"></script>
+        
+</body>
 </html> 

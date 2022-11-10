@@ -1,0 +1,71 @@
+#container_band {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+#container_band > h1 {
+    padding: 0px;
+}
+
+.album_info {
+    max-width: 500px;   
+}
+
+.band_img {
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+}
+
+.btn_box {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+}
+
+.btn_box > button {
+    display: inline-block;
+    background-color: rgb(68, 121, 182);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    letter-spacing: 3px;
+    color: #ffffff;
+    font-size: 16px;
+    text-decoration: none;
+    width: 50%;
+}
+
+.btn_box > button:hover {
+    background-color: rgb(42, 82, 128);
+}
+
+/* change album  */
+
+.change_music_container {
+    margin-top: 30px;
+}
+
+#change_music{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: auto;
+    width: 600px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+}
+
+#submit_btn {
+    margin: auto;
+    width: 200px;
+    height: 100%;
+    padding: 10px;
+}

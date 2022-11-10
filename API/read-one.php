@@ -12,7 +12,7 @@
 
     $id = $_GET["id"];
 
-    $file_Name = "database.json";
+    $file_Name = "./json/database.json";
 
     $database = [];
 
@@ -26,14 +26,15 @@
     if ($request_Method != "GET") {
         sendJSON($database, 405);
     } 
-    
+
     foreach ($database as $data) {
 
-        if ($data["id"] != $id) {
-            $error = ["error" => "not a valied $id"];
-            sendJSON($error, 404);
-        } else {
+        if ($data["id"] == $id ) {
             sendJSON($data);
         }
     
     }
+
+    $error = ["error" => "Not Found"];
+    sendJSON($error, 404);
+    

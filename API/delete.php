@@ -10,7 +10,7 @@
         exit();
     } 
 
-    $file_Name = "database.json";
+    $file_Name = "./json/database.json";
 
     $request_Method = $_SERVER["REQUEST_METHOD"];
 
@@ -40,4 +40,5 @@
             }             
         }
 
-        sendJSON($database, 400);
+        $error = ["error" => "dident find anything to delete"];
+        sendJSON($error, 400);

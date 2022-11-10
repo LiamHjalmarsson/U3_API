@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #9792a8a1;
+}
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -14,7 +18,9 @@ nav {
 }
 
 .logo {
-    letter-spacing: 2px;
+    width: 300px;
+    margin-left: 20px;
+    letter-spacing: 3px;
     font-size: 20px;
     color: whitesmoke;
 }
@@ -22,7 +28,7 @@ nav {
 ul {
     display: flex;
     justify-content: space-around;
-    width: 40%;
+    width: 100%;
 }
 
 .nav-active {
@@ -33,10 +39,32 @@ ul > li {
     list-style: none;
 }
 
-ul > li > a {
+.link {
+    display: inline-block;
     color: whitesmoke;
+    font-size: 20px;
     text-decoration: none;
+    margin-block: 2px;
+    position: relative;
 }
+
+.link::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: whitesmoke;
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .20s ease-in;
+}
+
+.link:hover::after{
+    transform: scaleX(1);
+} 
 
 .burger-menu {
     cursor: pointer;
@@ -59,9 +87,18 @@ ul > li > a {
     }
 } 
 
-@media (max-width:740px) {
+@media screen and (max-width:850px) {
     body {
         overflow-x: hidden;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .logo{
+        margin-left: 20px;
     }
 
     ul {
@@ -74,7 +111,6 @@ ul > li > a {
         display: flex;
         flex-direction: column;
         align-items: center;
-
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
     }
@@ -85,6 +121,7 @@ ul > li > a {
     
     .burger-menu {
         display: block;
+        margin-right: 20px;
     }
 }
 
@@ -111,6 +148,25 @@ ul > li > a {
     transform:  rotate(45deg) translate(-6px, -6px);
 }
 
-footer {
+main {
+    margin: auto;
+    padding-top: 20px;
+    max-width: 1000px;
+}
+
+h1 {
     text-align: center;
+    margin-bottom: 20px;
+}
+
+footer {
+    /* position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin: 0 auto;
 }
