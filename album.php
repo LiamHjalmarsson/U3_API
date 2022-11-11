@@ -28,8 +28,10 @@
         ?>
     </footer>
 
+    <script src="js/reuse.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/album.js"></script>
+    <script src="js/album_btns.js"></script>
     
 </body>
 </html> 

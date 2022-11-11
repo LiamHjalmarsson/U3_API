@@ -91,6 +91,21 @@ input {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 80vh;
+    gap: 20px;
+}
+
+.song {
+    display: flex;
+}
+
+.band_btn{
+    /* margin: auto; */
+} 
+
+#songs {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
 }

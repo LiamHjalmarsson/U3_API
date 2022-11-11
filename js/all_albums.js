@@ -21,16 +21,16 @@ async function get_all () {
 
 async function display_information (recourse) {
 
-    let container = document.createElement("div");
+    let container = createElement("div");
     container.id = "container";
 
-    document.querySelector("main").append(container);
+    querySelector("main").append(container);
 
     if (!recourse.error) {
 
         recourse.forEach(res => {
             
-            let box = document.createElement("div");
+            let box = createElement("div");
             box.classList.add("box");
 
             let band = first_letter_big(res.band)
@@ -48,13 +48,13 @@ async function display_information (recourse) {
     } else {
         container.id = "empety_container";
         container.innerHTML = ` <h2> ${recourse.error} </h2>
-        <button class="band_btn"> <a href="add_to_database.php"> Press here to add </a> </button>
+            <button class="band_btn"> <a href="add_to_database.php"> Press here to add </a> </button>
         `;
     }
 }
 
 function image_Band (res, box) {
-    let img = document.createElement("div");
+    let img = createElement("div");
     
     if (res.src != "") {
         img.classList.add("img_pic");
@@ -68,14 +68,14 @@ function image_Band (res, box) {
 }
 
 function add_new_image (img) {
-    let div = document.createElement("div");
+    let div = createElement("div");
     div.classList.add("add_new_image_input");
-
+    div.textContent = `No image added`;
     img.append(div);
 }
 
 function information_Band (res, box) {
-    let btn = document.createElement("div");
+    let btn = createElement("div");
     btn.classList.add("band_btn");
 
     let album = first_letter_big(res.album);
@@ -86,12 +86,5 @@ function information_Band (res, box) {
 
     box.append(btn);
 }
-
-function first_letter_big (recourse) {
-    let small_letters = recourse;
-    let album = small_letters.charAt(0).toUpperCase() + small_letters.slice(1);
-
-    return album;
-} 
 
 get_all();

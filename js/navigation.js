@@ -1,6 +1,6 @@
 function navigation () {
-    let burger_menu = document.querySelector(".burger-menu");
-    let navUl = document.querySelector("ul");
+    let burger_menu = querySelector(".burger-menu");
+    let navUl = querySelector("ul");
 
     burger_menu.addEventListener("click", () => {
         navUl.classList.toggle("nav-active");
@@ -10,9 +10,8 @@ function navigation () {
 
 }
 
-
 function links () {
-    let links = document.querySelectorAll("ul li");
+    let links = querySelectorAll("ul li");
 
     links.forEach((link, index) => {
         if (link.style.animation) {

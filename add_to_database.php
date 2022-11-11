@@ -43,6 +43,7 @@
         ?>
     </footer>
 
+    <script src="js/reuse.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/add_to_database.js"></script>
         

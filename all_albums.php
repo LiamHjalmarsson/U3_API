@@ -29,6 +29,7 @@
         ?>
     </footer>
 
+    <script src="js/reuse.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/all_albums.js"></script>
     
