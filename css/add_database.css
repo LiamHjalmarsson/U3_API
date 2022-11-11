@@ -9,11 +9,17 @@ input {
     padding: 10px;
 }
 
+input[type=text], input[type=number] {
+    text-align: center;
+}
+
 #submit_btn {
-    margin: auto;
+    border-radius: 0px;
+    padding: 8px;
+    /* margin: auto;
     width: 200px;
     height: 100%;
-    padding: 10px;
+    padding: 10px; */
 }
 
 .add_another {
@@ -21,10 +27,13 @@ input {
 }
 
 section {
+    padding-top: 20px;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    width: 70%;
+    height: 75%;
 }
 
 #add_new_data {
@@ -35,7 +44,7 @@ section {
 
     min-width: 800px;
     width: 40%;
-    height: 70%;
+    height: 700px;
     border-radius: 5px;
     background-size: cover;
     background-position: center;
@@ -45,14 +54,19 @@ section {
     width: 100%;
 }
 
+h2 {
+    color: var(--text);
+}
+
 .box {
     width: 100%;
     text-align: center;
     padding: 20px;
-    color: white;
+    color: var(--text);
     letter-spacing: 2px;
     font-size: 16px;
-    background-color:rgb(68, 121, 182);
+    background-color: var(--btn);
+    border: 1px solid var(--btn);
 }
 
 .no_imag_added {
@@ -63,7 +77,14 @@ section {
     width: 100%;
     padding: 20px;
     background-color: #b86262b8;
-    color: white;
+    color: var(--text);
     font-size: 16px;
     text-align: center;
+}
+
+footer {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
 }

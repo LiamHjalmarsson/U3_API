@@ -1,3 +1,16 @@
+:root {
+    --colorNAv: #0B0C10;
+    --colorLowOpacity: #0b0c108c;
+    --added: #1F2833;
+    --text: #C5C6C7;
+    --noImg: #1F2833;
+    --btn: #1F2833;
+    --backGround: #C5C6C7;
+
+    --trycolor1: #66FCf1;
+    --trycolor1: #45A29E;
+  }
+
 * {
     padding: 0px;
     margin: 0px;
@@ -5,7 +18,7 @@
 }
 
 body {
-    background-color: #9792a8a1;
+    background-color: var(--backGround);
 }
 
 nav {
@@ -13,8 +26,7 @@ nav {
     justify-content: space-around;
     align-items: center;
     min-height: 7vh;
-    
-    background-color: rgb(68, 121, 182);
+    background-color: var(--colorNAv);
 }
 
 .logo {
@@ -22,7 +34,7 @@ nav {
     margin-left: 20px;
     letter-spacing: 3px;
     font-size: 20px;
-    color: whitesmoke;
+    color: var(--text);
 }
 
 ul {
@@ -41,7 +53,7 @@ ul > li {
 
 .link {
     display: inline-block;
-    color: whitesmoke;
+    color: var(--text);
     font-size: 20px;
     text-decoration: none;
     margin-block: 2px;
@@ -52,7 +64,7 @@ ul > li {
     content: "";
     width: 100%;
     height: 1px;
-    background-color: whitesmoke;
+    background-color: var(--text);
     border-radius: 4px;
     position: absolute;
     left: 0;
@@ -76,7 +88,7 @@ ul > li {
     width: 30px;
     height: 4px;
     border-radius: 5px;
-    background-color: whitesmoke;
+    background-color: var(--text);
     margin: 5px;
     transition: all 0.5s;
 }
@@ -102,12 +114,13 @@ ul > li {
     }
 
     ul {
+        z-index: 1;
         position: absolute;
         right: 0px;
         height: 93vh;
         width: 100%;
         top: 7vh;
-        background-color: rgb(68, 121, 182);
+        background-color: var(--colorNAv);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -159,11 +172,52 @@ h1 {
     margin-bottom: 20px;
 }
 
+.band_btn {
+    display: inline-block;
+    background-color: var(--btn);
+    border: 1px solid var(--btn);
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 0px 0px 5px 5px;
+    letter-spacing: 3px;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+}
+
+.band_btn > a {
+    display: inline-block;
+    color: whitesmoke;
+    font-size: 20px;
+    width: 100%;
+    text-decoration: none;
+    margin-block: 2px;
+    position: relative;
+}
+
+.band_btn > a::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: var(--text);
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .20s ease-in;
+}
+
+.band_btn > a:hover::after{
+    transform: scaleX(1);
+} 
+
+p {
+    font-size: 18px;
+}
+
 footer {
-    /* position: fixed;
-    left: 50%;
-    bottom: 20px;
-    transform: translate(-50%, -50%); */
     display: flex;
     justify-content: center;
     align-items: center;

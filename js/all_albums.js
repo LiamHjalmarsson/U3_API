@@ -46,7 +46,10 @@ async function display_information (recourse) {
         });
 
     } else {
-        container.innerHTML = recourse.error;
+        container.id = "empety_container";
+        container.innerHTML = ` <h2> ${recourse.error} </h2>
+        <button class="band_btn"> <a href="add_to_database.php"> Press here to add </a> </button>
+        `;
     }
 }
 
@@ -68,11 +71,6 @@ function add_new_image (img) {
     let div = document.createElement("div");
     div.classList.add("add_new_image_input");
 
-    div.innerHTML = `<form id="add_image" action="http://localhost:8080/api/update.php" method="PUT">
-        <input type="file" name="image" class="image">
-        <button type="submit" id="submit_btn"> Add image </button> 
-    </form>`;
-
     img.append(div);
 }
 
@@ -84,7 +82,7 @@ function information_Band (res, box) {
 
     let album_url = album.split(' ').join('_').toLowerCase();
 
-    btn.innerHTML = `<a href="album.php?album=${album_url}&id=${res.id}"> <button> Album: ${album}  </button> </a>`;
+    btn.innerHTML = `<a href="album.php?album=${album_url}&id=${res.id}"> Album: ${album} </a>`;
 
     box.append(btn);
 }

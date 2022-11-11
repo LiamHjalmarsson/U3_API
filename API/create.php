@@ -69,16 +69,16 @@
     $new_file_Name = $_FILES["image"]["name"];
     $file_Size = $_FILES["image"]["size"];
     $file_Type = $_FILES["image"]["type"];
-        
+    
     $name_no_space = str_replace((" "), ("_"), ($new_file_Name));
         
     $timestamp = time();
         
     $destination = "uploades/$timestamp-$name_no_space";
         
-    if ($file_Size > 250000) {
+    if ($file_Size > 350000) {
         $error = ["error" => "The size is to big $size cant be bigger then 250000!"];
-        sendJSON($error, 400);
+        sendJSON($error, 402);
     }
         
     if ($file_Type != "image/jpeg" and $type != "image/jpg") {

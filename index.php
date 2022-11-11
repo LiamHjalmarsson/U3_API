@@ -22,14 +22,15 @@
         
         <h1> WELCOME TO LOVE FOR MUSIC </h1>
 
-        <footer>
-            <?php
-                $date_year = date("Y");
-                echo "<p> Copyright © $date_year </p>";
-            ?>
-        </footer>
-
+        
     </header>
+
+    <footer>
+        <?php
+            $date_year = date("Y");
+            echo "<p> Copyright © $date_year </p>";
+        ?>
+    </footer>
     
 
     <script src="js/navigation.js"></script>

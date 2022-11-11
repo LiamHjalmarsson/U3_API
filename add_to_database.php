@@ -27,7 +27,7 @@
             <input type="file" name="image" class="image">
             <input class="genre" type="text" name="genre" placeholder="Enter genre">
             <input class="year" type="number" name="year" placeholder="Enter year">
-            <button type="submit" id="submit_btn"> Add to database </button>
+            <button type="submit" id="submit_btn" class="band_btn"> <a> Add data </a> </button>
         </form>
 
     </main>

@@ -33,10 +33,11 @@
             if ($data["id"] == $requestData["id"]) {
                 array_splice($database, $index, 1);
                 $json = json_encode($database, JSON_PRETTY_PRINT);
+                $img = $data["src"];
+                unlink("$img");
                 file_put_contents($file_Name, $json);
                 
-                $number = 1;
-                sendJSON($number);
+                sendJSON($data);
             }             
         }
 

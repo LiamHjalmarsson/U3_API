@@ -2,7 +2,6 @@ body {
     background-image: url(../images_using/front_page.jpg);
     background-size: cover;
     background-position: center;
-    height: 100vh;
     color: white;
 }
 
@@ -19,11 +18,18 @@ h1 {
 }
 
 nav {
-    background-color: rgba(68, 121, 182, 0.459);
+    background-color: var(--colorLowOpacity);
+}
+
+footer {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
 }
 
 @media (max-width:850px) {
     nav {
-        background-color: rgba(68, 121, 182);
+        background-color: var(--color);
     }
 }

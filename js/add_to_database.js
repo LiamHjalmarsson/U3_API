@@ -46,13 +46,13 @@ function new_data_added (recourse) {
         container.classList.add("no_imag_added");
     }
 
-    let album = first_letter_big(recourse);
+    let album = first_letter_big(recourse.album);
+    let band = first_letter_big(recourse.band);
 
-    container.innerHTML = ` <div class="box">
-        <h3> The band: ${album} was added! </h3>
-        <p> The album that was added: ${recourse.album} </p>
-    </div>`
-
+    
+    let album_url = album.split(' ').join('_').toLowerCase();
+    container.innerHTML = `
+        <button class="band_btn"> <h2> The band: ${band} was added! </h2> <a href="album.php?album=${album_url}&id=${recourse.id}?"> Do you want to edit the album: ${album}  </a> </button>`;
     document.querySelector("section").append(container);
 }
 
@@ -68,7 +68,7 @@ function missing_data (recourse) {
 } 
 
 function first_letter_big (recourse) {
-    let small_letters = recourse.album;
+    let small_letters = recourse;
     let album = small_letters.charAt(0).toUpperCase() + small_letters.slice(1);
 
     return album;

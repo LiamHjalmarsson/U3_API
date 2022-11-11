@@ -22,7 +22,6 @@
     
     $requestJSON = file_get_contents("php://input");
     $requestData = json_decode($requestJSON, true);
-
     
     if ($request_Method != "PUT") {
         sendJSON($database, 405);
