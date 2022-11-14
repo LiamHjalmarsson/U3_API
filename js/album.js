@@ -66,6 +66,7 @@ function get_album_information (recourse) {
         }
 
         edit_album_btn(recourse);
+        songs_list(recourse);
 
     } else {
         container.textContent = `There was an error: ${recourse.error}`;
@@ -83,7 +84,28 @@ function year_information (recourse) {
     return text;
 } 
 
+function songs_list (recourse) {
+
+    let songs_container = document.createElement("div");
+    songs_container.id = "songs_container";
+    document.querySelector("main").append(songs_container);
+    
+    let box = document.createElement("div");
+    box.id = "song_list";
+    songs_container.append(box);
+
+    recourse.songs.forEach(song => {
+        let div = document.createElement("div");
+        div.textContent = song;
+        box.append(div);
+    });
+
+    btn_song(recourse)
+}
+
 get_band()
+
+
 
         
 // function form_img_function (recourse) {

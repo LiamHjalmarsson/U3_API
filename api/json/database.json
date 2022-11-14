@@ -1,24 +1,28 @@
 [
     {
         "id": 1,
-        "band": "for king & country",
-        "album": "burn the ships",
-        "songs": [],
-        "genre": "chill",
-        "year": "2018",
-        "src": "uploades\/1668185664-forKingcountry.jpg"
-    },
-    {
-        "id": 3,
-        "band": "imagien dragons",
-        "album": "mercury",
-        "songs": [],
-        "genre": "pop \/ punk",
+        "band": "iMAGIEN DRAGONS",
+        "album": "mcasdasd",
+        "songs": [
+            "sdasdsad",
+            "adsadasd",
+            "asdsadsad",
+            "sadsadsadsad",
+            "sss",
+            "dasdasdsadasdasd",
+            "",
+            "hey",
+            "sdasd",
+            "",
+            "sadsad",
+            ""
+        ],
+        "genre": "pop",
         "year": "2022",
         "src": "uploades\/1668186996-ab67616d00001e02fc915b69600dce2991a61f13.jpg"
     },
     {
-        "id": 5,
+        "id": 2,
         "band": "five finger death punch",
         "album": "f8",
         "songs": [],
@@ -27,7 +31,7 @@
         "src": "uploades\/1668187063-71G2hRDPg6L.jpg"
     },
     {
-        "id": 6,
+        "id": 3,
         "band": "fall out boy",
         "album": "save rock and roll",
         "songs": [],
@@ -36,12 +40,49 @@
         "src": "uploades\/1668187084-Is-Fall-Out-Boy-rock-and-roll-iphonforum.jpg"
     },
     {
-        "id": 8,
+        "id": 4,
         "band": "kwabs, fetty wap",
         "album": "walk",
         "songs": [],
         "genre": "rap",
         "year": "2015",
         "src": "uploades\/1668187152-8f146b1922b24960d4e510054d8f7e29.1000x1000x1.jpg"
+    },
+    {
+        "id": 5,
+        "band": "for king & country",
+        "album": "burn the ships",
+        "songs": [],
+        "genre": "perfect",
+        "year": "2018",
+        "src": "uploades\/1668203273-forKingcountry.jpg"
+    },
+    {
+        "id": 6,
+        "band": "green day",
+        "album": "american idiot",
+        "songs": [
+            "Holiday"
+        ],
+        "genre": "rock",
+        "year": "2008",
+        "src": "uploades\/1668271359-ab67616d0000b27308a1b1e0674086d3f1995e1b.jpg"
+    },
+    {
+        "id": 7,
+        "band": "asdsadad",
+        "album": "asdasdasdasdsad",
+        "songs": [
+            "work work ",
+            "adsadsadsad",
+            "Worst",
+            "Best",
+            "Fantastic",
+            "something is happening ",
+            "getting something out of this "
+        ],
+        "genre": "asdasdasd",
+        "year": "123123123123",
+        "src": ""
     }
 ]

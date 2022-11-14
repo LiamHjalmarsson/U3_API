@@ -100,12 +100,34 @@ input {
 }
 
 .band_btn{
-    /* margin: auto; */
 } 
 
 #songs {
     margin-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     gap: 20px;
+}
+
+#songs_container {
+    margin: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#songs_container > button {
+    margin: auto;
+}
+
+#song_list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    font-size: 24px;
+    gap: 20px;
+    padding: 30px 0px;
+}
+
+#song_list > div {
+    padding: 20px;
 }

@@ -2,7 +2,7 @@
     ini_set("display_erorres", 1);
 
     ?>
-    
+
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -22,7 +22,6 @@
         
         <h1> WELCOME TO LOVE FOR MUSIC </h1>
 
-        
     </header>
 
     <footer>
@@ -31,7 +30,6 @@
             echo "<p> Copyright © $date_year </p>";
         ?>
     </footer>
-    
 
     <script src="js/reuse.js"></script>
     <script src="js/navigation.js"></script>

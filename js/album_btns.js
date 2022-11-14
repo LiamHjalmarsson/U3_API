@@ -87,6 +87,7 @@ function confirm_or_deny_Delete (recourse) {
 
                 deleted_album(recourse);
             } catch (error) {
+                querySelector("main").innerHTML = `There was an error try again`;
                 console.log(error);
             }
         }) 
@@ -116,15 +117,13 @@ function deleted_album (recourse) {
 // form function 
 function edit_album_form (container, recourse) {
 
-    container.innerHTML = `<form id="change_music" action="http://localhost:8080/api/update.php">
+    container.innerHTML = `<form id="change_music" action="http://localhost:8080/api/update.php" method="PUT">
         <input class="band" type="text" name="band" placeholder="band" value="${recourse.band}">
         <input class="albu" type="text" name="albu" placeholder="album" value="${recourse.album}">
         <input class="genre" type="text" name="genre" placeholder="genre" value="${recourse.genre}">
         <input class="year" type="text" name="year" placeholder="year" value="${recourse.year}">
         <button type="submit" id="submit_btn" class="band_btn"> <a> Update Album </a> </button>
     </form>`
-
-    // btn_song(recourse)
 
     document.querySelectorAll("input").forEach(input => { 
         input.addEventListener("click", () => {
@@ -142,6 +141,7 @@ function edit_album_form (container, recourse) {
 }
 
 async function form_request (recourse) {
+
     let band = querySelector(".band").value;
     if (band == "") {
         band = recourse.band;
@@ -188,11 +188,13 @@ async function form_request (recourse) {
                 get_album_information(recourse);
             
             } catch (error) {
+                querySelector("main").innerHTML = `There was an error try again`;
                 console.log(error);
             }
             
         } catch (error) {
-        console.log(error)
+            querySelector("main").innerHTML = `There was an error try again`;
+            console.log(error);
     }
 
 }
@@ -200,24 +202,71 @@ async function form_request (recourse) {
 function btn_song (recourse) {
     let btn = document.createElement("button");
     btn.classList.add("band_btn");
-    btn.innerHTML = `<a> add song </a>`
-
+    btn.innerHTML = `<a> Want to Add a song </a>`
+    document.querySelector("#songs_container").append(btn);
+    
     let div = document.createElement("div");
     div.classList.add("add_music_container")
-    div.innerHTML = `<form id="songs" action="http://localhost:8080/api/update.php"> </form>`
-    document.querySelector(".change_music_container").append(div)
-
+    div.innerHTML = "";
+    document.querySelector("#songs_container").append(div);
+    
     btn.addEventListener("click", (e) => {
-        e.preventDefault();
+        
+        // e.preventDefault();
+        div.innerHTML = `<form id="songs" action="http://localhost:8080/api/add_song.php" method="PUT"> 
+        </form>`;
 
+        let add = document.createElement("button");
+        add.classList.add("band_btn");
+        add.innerHTML = `<a> add song </a>`
+    
         let input = document.createElement("input");
         input.type = "text";
         input.classList.add("song");
         input.name = "song";
         input.placeholder = "Add a song";
+    
+        document.querySelector("#songs").append(add, input);
+            
+        let form = querySelector("#songs");
+            
+        form.addEventListener("submit", async (e) => {
+        
+            e.preventDefault();
+                
+            let req = new Request(`http://localhost:8080/api/add_song.php`, {
+                    method: "PUT",
+                    headers: {"content-type": "application/json, charset-utf-8"},
+                    body: JSON.stringify({
+                        "id": recourse.id,
+                        "songs": input.value
+                    })
+                });
+    
+                try {
+    
+                    let response = await fetch(req);
+                    let recourse_update = await response.json();
+                    
+                    try {
+                            let req = new Request(`http://localhost:8080/api/read-one.php?id=${recourse_update.id}`); 
+            
+                            let response = await fetch(req);
+                            let recourse = await response.json();
+                        
+                            get_album_information(recourse);
+                        
+                        } catch (error) {
+                            querySelector("main").innerHTML = `There was an error try again`;
+                            console.log(error);
+                        }
+                        
+                    } catch (error) {
+                        querySelector("main").innerHTML = `There was an error try again`;
+                        console.log(error);
+                }
+    
+            })
 
-        document.querySelector("#songs").append(input)
     })
-
-    document.querySelector("#change_music").append(btn);
 }

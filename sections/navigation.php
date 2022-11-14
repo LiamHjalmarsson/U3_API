@@ -12,6 +12,9 @@
         <li>
             <a href="add_to_database.php" class="link">Add to database</a>
         </li>
+        <li>
+            <a href="database.php" class="link">Database</a>
+        </li>
     </ul>
 
     <div class="burger-menu">
@@ -21,3 +24,4 @@
     </div>
 
 </nav>
+
