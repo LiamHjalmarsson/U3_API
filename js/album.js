@@ -12,7 +12,7 @@ async function get_band () {
         get_album_information(recourse);
 
     } catch (error) {
-        console.log(error);
+        missing_data(error);
     }
 
 }
@@ -101,7 +101,7 @@ function songs_list (recourse) {
         let index = counter++;
         
         let div = document.createElement("div");
-        div.textContent = ` ${index}. ${song}`;
+        div.textContent = ` ${index}. ${first_letter_big(song)}`;
         box.append(div);
     });
 
@@ -145,11 +145,20 @@ function form_img_function (recourse) {
                 get_album_information(recourse);
 
             } catch (error) {
-                console.log(error);
+                missing_data(error)
             }
 
         } catch (error) {
-            console.log(error)
+            missing_data(error)
         }
     })
 }
+
+function missing_data (recourse) {
+    let container = createElement("div");
+    container.id = "add_new_data";
+    container.classList.add("no_imag_added");
+
+    container.innerHTML = ` <p class="error_msg"> ${recourse.error} </p>`;
+    querySelector("body").append(container);
+} 

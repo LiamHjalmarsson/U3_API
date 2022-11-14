@@ -66,13 +66,13 @@ function display_recourses (recourse) {
         tbody.append(tr);
 
         let songs = data.songs.length;
-        let genres = data.genre == "" ? "Emptey" : data.genre;
+        let genres = data.genre == "" ? "Emptey" : first_letter_big(data.genre);
         let year = data.year == "" ? "Emptey" : data.year;
         let src = data.src == "" ? "Emptey" : data.src;
 
         tr.innerHTML = `<th scope="row">${data.id}</th>
-            <td class="bandKey">${data.band}</td>
-            <td class="albumKey">${data.album}</td>
+            <td class="bandKey">${first_letter_big(data.band)}</td>
+            <td class="albumKey">${first_letter_big(data.album)}</td>
             <td>${songs}</td>
             <td>${genres}</td>
             <td>${year}</td>
