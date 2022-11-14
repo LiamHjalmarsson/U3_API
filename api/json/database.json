@@ -30,7 +30,9 @@
         "id": 4,
         "band": "kwabs, fetty wap",
         "album": "walk",
-        "songs": [],
+        "songs": [
+            "walk"
+        ],
         "genre": "rap",
         "year": "2015",
         "src": "uploades\/1668187152-8f146b1922b24960d4e510054d8f7e29.1000x1000x1.jpg"
@@ -49,7 +51,8 @@
         "band": "green day",
         "album": "american idiot",
         "songs": [
-            "Holiday"
+            "Holiday",
+            "american idiot"
         ],
         "genre": "rock",
         "year": "2008",
@@ -60,17 +63,20 @@
         "band": "asdsadad",
         "album": "asdasdasdasdsad",
         "songs": [
-            "work work ",
-            "adsadsadsad",
-            "Worst",
-            "Best",
-            "Fantastic",
-            "something is happening ",
-            "getting something out of this ",
-            "sdasdas"
+            "asdasd",
+            "asdasd"
         ],
         "genre": "asdasdasd",
         "year": "123123123123",
-        "src": ""
+        "src": "uploades\/1668461226-8f146b1922b24960d4e510054d8f7e29.1000x1000x1.jpg"
+    },
+    {
+        "id": 8,
+        "band": "sabaton",
+        "album": "carlous rex",
+        "songs": [],
+        "genre": "metal",
+        "year": "2012",
+        "src": "uploades\/1668459971-17152a68eeabee785f7bc6e984a791b0.1000x1000x1.jpg"
     }
 ]

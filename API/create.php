@@ -27,10 +27,8 @@
     } 
 
     if ($_POST["band"] == "" or $_POST["album"] == "") {
-
         $error = ["error" => "You did not use one of the input fileds (band or album)! Please try again"];
         sendJSON($error);
-
     }
 
     $band = strtolower($_POST["band"]); 
@@ -77,12 +75,12 @@
     $destination = "uploades/$timestamp-$name_no_space";
         
     if ($file_Size > 350000) {
-        $error = ["error" => "The size is to big $size cant be bigger then 250000!"];
+        $error = ["error" => "The size is to big $file_Size cant be bigger then 250000!"];
         sendJSON($error, 402);
     }
         
-    if ($file_Type != "image/jpeg" and $type != "image/jpg") {
-        $error = ["error" => "The file format $type is not allowed. Please us JPEG or JPG!"];
+    if ($file_Type != "image/jpeg" and $file_Type != "image/jpg") {
+        $error = ["error" => "The file format $file_Type is not allowed. Please us JPEG or JPG!"];
         sendJSON($error, 400);
     }
 

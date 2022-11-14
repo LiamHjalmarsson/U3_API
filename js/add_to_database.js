@@ -28,6 +28,7 @@ form.addEventListener("submit", async (e) => {
         }
 
     } catch (error) {
+        console.log(error)
         missing_data(error);
     }
 

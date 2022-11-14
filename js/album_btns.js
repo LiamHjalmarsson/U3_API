@@ -36,7 +36,7 @@ function delete_btn (recourse) {
     let btn_delete = document.createElement("button");
     btn_delete.classList.add("delete_btn");
     btn_delete.classList.add("band_btn");
-    btn_delete.innerHTML = "<a>DELETE</a>";
+    btn_delete.innerHTML = "<a>DELETE Album</a>";
     querySelector(".btn_box").append(btn_delete);
 
     btn_delete.addEventListener("click", async () => {

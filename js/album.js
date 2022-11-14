@@ -62,7 +62,7 @@ function get_album_information (recourse) {
                 </form>
             </div> `;
 
-            // form_img_function(recourse);
+            form_img_function(recourse);
         }
 
         edit_album_btn(recourse);
@@ -113,32 +113,43 @@ get_band()
 
 
         
-// function form_img_function (recourse) {
+function form_img_function (recourse) {
 
-//     let form = document.getElementById("add_image");
+    let form = document.getElementById("add_image");
 
-//     form.addEventListener("submit", async (e) => {
-//         e.preventDefault();
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-//         let formDATA = new FormData(form);
+        let formDATA = new FormData(form);
+        formDATA.append("id", recourse.id);
 
-//         let req = new Request("http://localhost:8080/api/update_image.php", {
-//             method: "PATCH",
-//             body: JSON.stringify({
-//                 "id": recourse.id,
-//                 "src": formDATA
-//             })
-//         });
+        console.log(formDATA)
+
+        let req = new Request("http://localhost:8080/api/update_image.php", {
+            method: "POST",
+            body: formDATA
+        });
+
+        try {
     
-//         try {
-    
-//             let response = await fetch(req);
-//             // console.log(response)
-    
-//             let recourse = await response.json();
+            let response = await fetch(req);
+            let recourse = await response.json();
 
-//             console.log(recourse)
-//         } catch (error) {
-//         }
-//     })
-// }
+            let new_req = new Request(`http://localhost:8080/api/read-one.php?id=${recourse.id}`); 
+
+            try {
+                let response = await fetch(new_req);
+                
+                let recourse = await response.json();
+
+                get_album_information(recourse);
+
+            } catch (error) {
+                console.log(error);
+            }
+
+        } catch (error) {
+            console.log(error)
+        }
+    })
+}

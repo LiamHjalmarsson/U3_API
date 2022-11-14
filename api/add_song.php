@@ -33,7 +33,9 @@
     foreach ($database as $index => $data) {
 
         if ($data["id"] == $id) {
-            $data["songs"][] = $songs;
+
+
+            $data["songs"][] = strtolower($songs);
 
             $database[$index] = $data;
 

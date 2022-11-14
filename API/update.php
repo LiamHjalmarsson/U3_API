@@ -27,11 +27,11 @@
         sendJSON($database, 405);
     }
 
-    $id = $requestData["id"];
-    $band = $requestData["band"];
-    $album = $requestData["album"];
-    $genre = $requestData["genre"];
-    $year = $requestData["year"];
+    $id = strtolower($requestData["id"]);
+    $band = strtolower($requestData["band"]);
+    $album = strtolower($requestData["album"]);
+    $genre = strtolower($requestData["genre"]);
+    $year = strtolower($requestData["year"]);
 
     foreach ($database as $index => $data) {
 
