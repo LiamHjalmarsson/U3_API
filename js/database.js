@@ -65,7 +65,7 @@ function display_recourses (recourse) {
         tr.classList.add("keys");
         tbody.append(tr);
 
-        let songs = data.songs == "" ? "Emptey" : data.songs[0];
+        let songs = data.songs.length;
         let genres = data.genre == "" ? "Emptey" : data.genre;
         let year = data.year == "" ? "Emptey" : data.year;
         let src = data.src == "" ? "Emptey" : data.src;

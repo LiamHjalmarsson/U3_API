@@ -16,7 +16,7 @@ function edit_btn (recourse) {
     let btn = createElement("button");
     btn.classList.add("edit_btn");
     btn.classList.add("band_btn");
-    btn.innerHTML = "<a>EDIT</a>";
+    btn.innerHTML = "<a> EDIT Album </a>";
     querySelector(".btn_box").append(btn);
 
     btn.addEventListener("click", () => {
@@ -212,7 +212,10 @@ function btn_song (recourse) {
     
     btn.addEventListener("click", (e) => {
         
-        // e.preventDefault();
+        btn.classList.toggle("active")
+
+        if (btn.classList.contains("active")) {
+
         div.innerHTML = `<form id="songs" action="http://localhost:8080/api/add_song.php" method="PUT"> 
         </form>`;
 
@@ -264,9 +267,11 @@ function btn_song (recourse) {
                     } catch (error) {
                         querySelector("main").innerHTML = `There was an error try again`;
                         console.log(error);
-                }
-    
+                    }
             })
-
+        } else {
+            div.innerHTML = "";
+        }
+        
     })
 }

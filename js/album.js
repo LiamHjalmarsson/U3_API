@@ -94,9 +94,14 @@ function songs_list (recourse) {
     box.id = "song_list";
     songs_container.append(box);
 
+    let counter = 1;
+    
     recourse.songs.forEach(song => {
+
+        let index = counter++;
+        
         let div = document.createElement("div");
-        div.textContent = song;
+        div.textContent = ` ${index}. ${song}`;
         box.append(div);
     });
 
