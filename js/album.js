@@ -42,7 +42,8 @@ function get_album_information (recourse) {
                 <div class="text">
                     <h1> ${band} </h1>
                     <div class="album_info">
-                        <p> The album: ${album} ${year_information(recourse)}. The album has ${recourse.songs.length} song added to its list of songs and style of music is ${recourse.genre}. </p>
+                        <h3> The album: ${album} ${year_information(recourse)}. </h3>
+                        <p> The album has ${recourse.songs.length} song added to its list of songs in the album and the typ of music is ${recourse.genre}. </p>
                     </div>
                 </div>
                 <div class="band_img" style="background-image: url(../api/${recourse.src})"> </div>
@@ -154,11 +155,3 @@ function form_img_function (recourse) {
     })
 }
 
-function missing_data (recourse) {
-    let container = createElement("div");
-    container.id = "add_new_data";
-    container.classList.add("no_imag_added");
-
-    container.innerHTML = ` <p class="error_msg"> ${recourse.error} </p>`;
-    querySelector("body").append(container);
-} 

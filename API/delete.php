@@ -39,6 +39,7 @@
                 
                 sendJSON($data);
             }             
+            
         }
 
         $error = ["error" => "dident find anything to delete"];

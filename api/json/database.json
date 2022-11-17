@@ -5,7 +5,8 @@
         "album": "mcasdasd",
         "songs": [
             "bones",
-            "enemy"
+            "enemy",
+            "ss"
         ],
         "genre": "pop",
         "year": "2022",
@@ -64,5 +65,25 @@
         "genre": "rock",
         "year": "2008",
         "src": "uploades\/1668271359-ab67616d0000b27308a1b1e0674086d3f1995e1b.jpg"
+    },
+    {
+        "id": 7,
+        "band": "ss",
+        "album": "ss",
+        "songs": [],
+        "genre": "",
+        "year": "",
+        "src": ""
+    },
+    {
+        "id": 9,
+        "band": "linkin park",
+        "album": "one more light",
+        "songs": [
+            "talking to myself"
+        ],
+        "genre": "punk \/ rock",
+        "year": "2017",
+        "src": "uploades\/1668502384-linkin_park.jpg"
     }
 ]

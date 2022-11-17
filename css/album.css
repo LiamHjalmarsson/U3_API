@@ -11,7 +11,12 @@
 }
 
 .album_info {
+    padding: 10px;
     max-width: 500px;   
+}
+
+.album_info  {
+    text-align: center;
 }
 
 .band_img {
@@ -99,10 +104,6 @@ input {
     display: flex;
 }
 
-.band_btn{
-
-}
-
 #submit_btn {
     width: 100%;
 }
@@ -129,7 +130,6 @@ input {
     grid-template-columns: repeat(3, 1fr);
     font-size: 24px;
     gap: 20px;
-    padding: 30px 0px;
 }
 
 #song_list > div {

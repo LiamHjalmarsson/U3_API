@@ -33,7 +33,7 @@ function edit_btn (recourse) {
 }
 
 function delete_btn (recourse) {
-    let btn_delete = document.createElement("button");
+    let btn_delete = createElement("button");
     btn_delete.classList.add("delete_btn");
     btn_delete.classList.add("band_btn");
     btn_delete.innerHTML = "<a>DELETE Album</a>";
@@ -87,8 +87,7 @@ function confirm_or_deny_Delete (recourse) {
 
                 deleted_album(recourse);
             } catch (error) {
-                querySelector("main").innerHTML = `There was an error try again`;
-                console.log(error);
+                missing_data(error)
             }
         }) 
     } 
@@ -188,27 +187,25 @@ async function form_request (recourse) {
                 get_album_information(recourse);
             
             } catch (error) {
-                querySelector("main").innerHTML = `There was an error try again`;
-                console.log(error);
+                missing_data(error)
             }
             
         } catch (error) {
-            querySelector("main").innerHTML = `There was an error try again`;
-            console.log(error);
+            missing_data(error)
     }
 
 }
 
 function btn_song (recourse) {
-    let btn = document.createElement("button");
+    let btn = createElement("button");
     btn.classList.add("band_btn");
     btn.innerHTML = `<a> Want to Add a song </a>`
-    document.querySelector("#songs_container").append(btn);
+    querySelector("#songs_container").append(btn);
     
-    let div = document.createElement("div");
+    let div = createElement("div");
     div.classList.add("add_music_container")
     div.innerHTML = "";
-    document.querySelector("#songs_container").append(div);
+    querySelector("#songs_container").append(div);
     
     btn.addEventListener("click", (e) => {
         
@@ -219,59 +216,61 @@ function btn_song (recourse) {
         div.innerHTML = `<form id="songs" action="http://localhost:8080/api/add_song.php" method="PUT"> 
         </form>`;
 
-        let add = document.createElement("button");
+        let add = createElement("button");
         add.classList.add("band_btn");
         add.innerHTML = `<a> add song </a>`
     
-        let input = document.createElement("input");
+        let input = createElement("input");
         input.type = "text";
         input.classList.add("song");
         input.name = "song";
         input.placeholder = "Add a song";
     
-        document.querySelector("#songs").append(add, input);
+        querySelector("#songs").append(add, input);
             
-        let form = querySelector("#songs");
-            
-        form.addEventListener("submit", async (e) => {
-        
-            e.preventDefault();
-                
-            let req = new Request(`http://localhost:8080/api/add_song.php`, {
-                    method: "PUT",
-                    headers: {"content-type": "application/json, charset-utf-8"},
-                    body: JSON.stringify({
-                        "id": recourse.id,
-                        "songs": input.value
-                    })
-                });
-    
-                try {
-    
-                    let response = await fetch(req);
-                    let recourse_update = await response.json();
-                    
-                    try {
-                            let req = new Request(`http://localhost:8080/api/read-one.php?id=${recourse_update.id}`); 
-            
-                            let response = await fetch(req);
-                            let recourse = await response.json();
-                        
-                            get_album_information(recourse);
-                        
-                        } catch (error) {
-                            querySelector("main").innerHTML = `There was an error try again`;
-                            console.log(error);
-                        }
-                        
-                    } catch (error) {
-                        querySelector("main").innerHTML = `There was an error try again`;
-                        console.log(error);
-                    }
-            })
+        added_new(recourse, input)
         } else {
             div.innerHTML = "";
         }
         
+    })
+}
+
+function added_new (recourse, input) {
+    let form = querySelector("#songs");
+            
+    form.addEventListener("submit", async (e) => {
+    
+        e.preventDefault();
+            
+        let req = new Request(`http://localhost:8080/api/add_song.php`, {
+                method: "PUT",
+                headers: {"content-type": "application/json, charset-utf-8"},
+                body: JSON.stringify({
+                    "id": recourse.id,
+                    "songs": input.value
+                })
+            });
+
+            try {
+
+                let response = await fetch(req);
+                let recourse_update = await response.json();
+                
+                try {
+                        let req = new Request(`http://localhost:8080/api/read-one.php?id=${recourse_update.id}`); 
+        
+                        let response = await fetch(req);
+                        let recourse = await response.json();
+                    
+                        get_album_information(recourse);
+                    
+                    } catch (error) {
+                        missing_data(error)
+                    }
+                    
+                } catch (error) {
+                    missing_data(error)
+                }
     })
 }

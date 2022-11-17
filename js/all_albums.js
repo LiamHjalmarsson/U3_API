@@ -14,7 +14,7 @@ async function get_all () {
         }
     
     } catch (error) {
-        console.log(error);
+        missing_data(error);
     }
 
 }
