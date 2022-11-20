@@ -1,18 +1,5 @@
 [
     {
-        "id": 1,
-        "band": "imagien dragons",
-        "album": "mcasdasd",
-        "songs": [
-            "bones",
-            "enemy",
-            "ss"
-        ],
-        "genre": "pop",
-        "year": "2022",
-        "src": "uploades\/1668186996-ab67616d00001e02fc915b69600dce2991a61f13.jpg"
-    },
-    {
         "id": 2,
         "band": "five finger death punch",
         "album": "f8",

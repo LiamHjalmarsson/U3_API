@@ -1,6 +1,6 @@
 async function get_band () {
     
-    let id = getSubjectFromUrl()
+    let id = getUrl()
 
     let req = new Request(`http://localhost:8080/api/read-one.php?id=${id}`); 
 
@@ -17,7 +17,7 @@ async function get_band () {
 
 }
 
-function getSubjectFromUrl () {
+function getUrl () {
     let url = new URL(window.location)
     let params = url.searchParams
     return parseInt(params.get('id'))

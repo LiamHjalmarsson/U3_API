@@ -135,3 +135,13 @@ input {
 #song_list > div {
     padding: 20px;
 }
+
+.con_delete:hover {
+    background-color: rgb(105, 37, 37);
+    transition: background-color 0.5s ease-in;
+}
+
+.den_delete:hover {
+    background-color: rgb(52, 146, 52);
+    transition: background-color 0.5s ease-in;
+}
